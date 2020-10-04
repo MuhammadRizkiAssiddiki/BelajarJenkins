@@ -1,0 +1,49 @@
+task helloworld{
+    doLast{
+        println "Muhammad Rizki Assiddiki"
+    }
+}
+
+task hurufkecil(dependsOn: helloworld){
+    doLast{
+        println "Huruf Kecil"
+    }
+}
+
+
+9.times {index ->
+    task "task$index"{
+        doLast{
+            println "ini task ke-$index"
+        }
+    }
+}
+
+task0.dependsOn task2, hurufkecil
+
+task Aksi
+
+Aksi{
+    doLast{
+        println "ini adalah aksi 1"
+    }
+}
+
+Aksi{
+    doLast{
+        println "ini adalah Aksi 2"
+    }
+}
+
+task aksi2{
+    aksi2.dependsOn hurufkecil, task0
+    doFirst {
+        
+        println "ini yang method pertama"
+    }
+
+    doFirst{
+        println "ini metode ke 2"
+    }
+
+}
