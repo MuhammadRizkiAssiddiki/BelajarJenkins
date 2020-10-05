@@ -25,7 +25,7 @@ task Aksi
 
 Aksi{
     doLast{
-        println "ini adalah aksi 1"
+        println "ini adalah aksi Pertama"
     }
 }
 
